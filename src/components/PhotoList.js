@@ -5,31 +5,24 @@ import ListElement from "./ListElement"
 
 const PhotoList = ({photoCollection}) => {
 
-    // const photo = (photoCollection) => {
-    //     // return console.log(photoCollection)
-    // // }
-    // const photoItems = photoCollection.map(individualPhoto => {
-    //     return individualPhoto })}
-
-    //     console.log(photoItems)
-    //         // console.log("photoItems is working")
-    //         // <ListElement
-    //         //     photoCollection = {photoCollection}
-    //         //     key = {index}
-    //         // />
-    //     )
-    // })
+    const photoItems = photoCollection.map((individualPhoto, index) => {
+        return (
+            <ListElement
+                photoCollection = {individualPhoto}
+                key = {index}
+            />
+        )
+    })
     
-    // return (
-    //     <>
-    //         <h1>This is the photo list</h1>
-    //         <ListElement/>
-    //         {photo()}
-    //         <ul>
-    //             {}
-    //         </ul>
-    //     </>
-    // )
+    return (
+        <>
+            <h1>This is the photo list</h1>
+                {photoItems}
+            <ul>
+                {}
+            </ul>
+        </>
+    )
 }
 
 export default PhotoList
