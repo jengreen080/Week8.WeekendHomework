@@ -11,10 +11,21 @@ const Home = () => {
     }, [])
 
     const getPhotoCollection = () => {
-        fetch("https://picsum.photos/v2/list?page=2&limit=100")
-        .then(res => res.json())
-        .then(photoCollection => setPhotoCollection(photoCollection))
-    }
+    //     fetch("https://picsum.photos/v2/list")
+    //     .then(res => res.json())
+    //     .then(photoCollection => setPhotoCollection(photoCollection))
+    // }
+    
+        fetch("https://picsum.photos/v2/list")
+            .then(res => res.json())
+            .then(data => {
+                const images = data.map(image => {
+                return image
+            })
+
+            console.log(images)
+        })
+    
 
 
 
@@ -26,6 +37,6 @@ const Home = () => {
             </ul>
         </>
     )
-}
+}}
 
 export default Home
