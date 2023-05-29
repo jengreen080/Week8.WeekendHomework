@@ -1,20 +1,33 @@
 import styled from "styled-components"
 import React, { useState, useEffect } from 'react';
 import PhotoList from "../components/PhotoList";
+import LK from "../LK.jpeg";
+import MNT from "../MNT.jpeg"
 
 const Home = () => {
 
     const [photoCollection, setPhotoCollection] = useState([])
 
     useEffect(() => {
-        getPhotoCollection();
+        getPhotoCollection()
     }, [])
+    
+    const getPhotoCollection = () => {   
+    let photoCollection = [{"id" : "MNT", "title" : "mountains", 
+            "location" : "Canada", "jpeg" : LK},
+            {"id" : "LK", "title" : "lake", 
+            "location" : "switzerland", "jpeg" : MNT} 
+    ];
+    setPhotoCollection(photoCollection)
+    }
+        // fetch("https://api.artic.edu/api/v1/artworks/search?q=photography")
+        //     .then(res => res.json())
+        //     .then(photoCollection => setPhotoCollection(photoCollection))
+            
+    // const onPhotoClicked = () => {
+    //     setPhot
+    // }
 
-    const getPhotoCollection = () => {
-        fetch("https://picsum.photos/v2/list")
-            .then(res => res.json())
-            .then(photoCollection => setPhotoCollection(photoCollection))
-    }     
 
     return (
         <>

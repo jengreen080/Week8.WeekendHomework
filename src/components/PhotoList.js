@@ -5,21 +5,23 @@ import ListElement from "./ListElement"
 
 const PhotoList = ({photoCollection}) => {
 
-    const photoItems = photoCollection.map((individualPhoto, index) => {
+    const photoItems = photoCollection.map((individualPhoto) => {
         return (
-            <ListElement
-                photoCollection = {individualPhoto}
-                key = {index}
+            <>
+                <p>this the list items</p>
+                <ListElement
+                    photoCollection = {individualPhoto.title}
+                    
+                    key = {individualPhoto.id}
             />
+            </>
         )
     })
     
     return (
         <>
-            <h1>This is the photo list</h1>
-                {photoItems}
             <ul>
-                {}
+                {photoItems}
             </ul>
         </>
     )

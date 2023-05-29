@@ -1,12 +1,13 @@
 import styled from "styled-components"
 // import React, { useState, useEffect } from 'react';
 
-const ListElement = () => {
+const ListElement = ({photoCollection}) => {
 
 
     return (
         <>
-            <h1>This is the list element</h1>
+            <h1>{photoCollection}</h1>
+            <img>{photoCollection.jpeg}</img>
             
         </>
     )
